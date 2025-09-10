@@ -6,22 +6,38 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Handwritten Digit Recognizer</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@latest/dist/tf.min.js"></script>
-  <script type="importmap">
+    <!-- 
+      Babel Standalone: Transpiles JSX and TypeScript in the browser.
+      It allows us to run React/TSX code without a build step.
+    -->
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <script type="importmap">
 {
   "imports": {
+    "react-dom/client": "https://esm.sh/react-dom@18.2.0/client",
+    "react-dom": "https://esm.sh/react-dom@18.2.0",
+    "react": "https://esm.sh/react@18.2.0",
+    "@tensorflow/tfjs": "https://esm.sh/@tensorflow/tfjs@4.10.0",
     "react-dom/": "https://aistudiocdn.com/react-dom@^19.1.1/",
-    "react/": "https://aistudiocdn.com/react@^19.1.1/",
-    "react": "https://aistudiocdn.com/react@^19.1.1",
-    "@tensorflow/tfjs": "https://aistudiocdn.com/@tensorflow/tfjs@^4.22.0"
+    "react/": "https://aistudiocdn.com/react@^19.1.1/"
   }
 }
 </script>
-<link rel="stylesheet" href="/index.css">
+  <link rel="stylesheet" href="/index.css">
 </head>
   <body class="bg-slate-900 text-white">
     <div id="root"></div>
-    <script type="module" src="./index.tsx"></script>
+    <!-- 
+      The script type is changed to "text/babel" and "data-type" to "module".
+      This tells Babel to fetch this script, transpile it from TSX to JS,
+      and then execute it as a standard ES module, allowing it to handle imports correctly.
+    -->
+    <script
+      type="text/babel"
+      data-presets="react,typescript"
+      data-type="module"
+      src="./index.tsx"
+    ></script>
   <script type="module" src="/index.tsx"></script>
 </body>
 </html>
