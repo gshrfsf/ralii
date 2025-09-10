@@ -1,4 +1,6 @@
 
+// FIX: Import TensorFlow.js to make its types available and resolve namespace errors.
+import * as tf from '@tensorflow/tfjs';
 import React, { useState, useEffect, useRef, useCallback } from 'react';
 import { Prediction, loadModel, predict } from './services/mnistService';
 import { Canvas, CanvasHandle } from './components/Canvas';
