@@ -1,0 +1,5 @@
+{
+  "name": "Handwritten Digit Recognizer",
+  "description": "An AI-powered web application that recognizes handwritten digits drawn on a canvas using a pre-trained machine learning model running directly in the browser with TensorFlow.js.",
+  "requestFramePermissions": []
+}
